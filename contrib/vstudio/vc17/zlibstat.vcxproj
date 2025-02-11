@@ -455,6 +455,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DebugInformationFormat>None</DebugInformationFormat>
       <ControlFlowGuard>Guard</ControlFlowGuard>
+      <GuardSignedReturns>true</GuardSignedReturns>
     </ClCompile>
     <ResourceCompile>
       <Culture>0x040c</Culture>
@@ -548,6 +549,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <ControlFlowGuard>Guard</ControlFlowGuard>
+      <GuardSignedReturns>true</GuardSignedReturns>
     </ClCompile>
     <ResourceCompile>
       <Culture>0x040c</Culture>
