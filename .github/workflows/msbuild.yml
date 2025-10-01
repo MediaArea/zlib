@@ -1,0 +1,23 @@
+name: MSBuild
+
+on: [push, pull_request]
+
+jobs:
+  Windows:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        architecture: [ Win32, x64, ARM64 ]
+        configuration: [ Release, ReleaseWithoutAsm ]
+      fail-fast: false
+    steps:
+      - name: Checkout zlib
+        uses: actions/checkout@v5
+        with:
+          path: zlib
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v2
+        with:
+          msbuild-architecture: x64
+      - name: Build
+        run: msbuild -p:Configuration=${{ matrix.configuration }} -p:Platform=${{ matrix.architecture }} ${{ github.workspace }}\zlib\contrib\vstudio\vc17\zlibvc.sln -verbosity:quiet -warnaserror
