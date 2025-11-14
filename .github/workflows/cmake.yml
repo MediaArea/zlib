@@ -67,7 +67,7 @@ jobs:
 
           - name: macOS GCC
             os: macos-latest
-            compiler: gcc-12
+            compiler: gcc-15
             cflags: -Wall -Wextra
             pkgtgt: package
             cmake-args: -DMINIZIP_ENABLE_BZIP2=ON
